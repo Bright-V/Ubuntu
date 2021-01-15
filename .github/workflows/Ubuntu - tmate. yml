@@ -1,0 +1,20 @@
+# https://github.com/P3TERX/ActionsVM
+
+name: Ubuntu (tmate)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Instance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
+    - name: Run Start Script
+      run: source ubuntu-start.sh
+
+    - name: Start SSH via tmate
+      uses: P3TERX/ssh2actions@main
